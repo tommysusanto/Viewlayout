@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var clickButton: UIButton!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtLabel: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func clickButton(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Welcome", message:
+            self.txtName.text, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+        
+        
+    }
+    
 
 }
 
